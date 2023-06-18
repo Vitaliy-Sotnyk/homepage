@@ -7,13 +7,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-
-    --primary-text-color: #181820;
-    --secondary-text-color: #5c5c62;
-    --durability-text-color: #6a737d9c;
-    --icon-color: #6a737d;
-    --border-color: #ff9a0045;
-    --text-decoration-color: #ff9a00;
+    
+    --resume-back-color: #213363;
+    --primary-text-color: rgb(227, 227, 227);
+    --secondary-text-color: #dddddd;
+    --durability-text-color: #f0f0f19c;
+    --icon-color: #1f8a71;
+    --border-color: #8EAC50;
+    --text-decoration-color: #D3D04F;
 }
 
 .container {
@@ -26,6 +27,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .fv {
@@ -35,9 +37,10 @@ body {
 }
 
 .resume {
+    background-color: var(--resume-back-color);
     margin: 50px auto;
-    border: 1px solid #f5f5f5;
-    box-shadow: 1px 1px 7px 7px #f5f5f5;
+    border: 1px solid var(--resume-back-color);
+    box-shadow: 1px 1px 7px 7px var(--resume-back-color);
     padding: 30px 0;
     max-width: 900px;
 }
@@ -87,6 +90,7 @@ body {
 
 .contact-info__block {
     display: flex;
+    width: 50%;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -124,8 +128,10 @@ body {
 
 .contact-info__avatar {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    width: 60%;
+    height: auto;
     object-fit: cover;
     border: 3px solid;
     border-color: var(--text-decoration-color);
@@ -164,14 +170,53 @@ body {
 }
 
 .skills__text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     color: var(--secondary-text-color);
     text-align: justify;
+    width: 100%;
+    flex: 1 1;
 }
 
+.skills__text__wrapper{
+    min-width: 50%;
+}
+
+.skills__text__wrapper__tools {
+    display: flex;
+    flex-direction: row;
+}
+
+.star{
+    margin: 0 20px;
+    color: var(--text-decoration-color);
+}
+
+.star span:last-child{
+    color: var(--secondary-text-color);
+}
+
+.three span:nth-child(4){
+    color: var(--secondary-text-color);
+}
+
+.two span:nth-child(3), 
+.two span:nth-child(4){
+    color: var(--secondary-text-color);
+}
+
+.main-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 .experiences {
     flex: 1 1 60%;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .experiences__header {
@@ -219,7 +264,8 @@ body {
 }
 
 .additional-info {
-    flex: 1 1 40%;
+    flex: 1 1 30%;
+    min-width: 300px;
 }
 
 .additional-info__education {
